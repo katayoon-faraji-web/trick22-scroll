@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/output.css">
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+        }
+        a{
+            text-transform:capitalize ;
+            text-decoration: none;
+        }
+        #header>ul>li>a{
+            animation: 1s linear forwards;
+        }
+        .headermod2{
+            background-color: white;
+            position: fixed;
+            left:0;
+            top: 0;
+            transition: .4s;
+            
+        }
+        .headermod2>ul>li>a{
+            animation: 1s linear  forwards;
+        }
+        @keyframes anime2 {
+            0%{color: rgb(12, 12, 41);}
+            60%{color: rgb(12, 12, 41);}
+            85%{color: rgb(118, 118, 125);}
+            100%{color: white;}
+        }
+        @keyframes anime1 {
+            0%{color: white;}
+            40%{color: rgb(118, 118, 125);}
+            60%{color: rgb(34, 34, 85);}
+            100%{color: rgb(34, 34, 85);}
+        }
+
+    </style>
+</head>
+<body class="font-primary">
+    <main id="mn" class="w-full h-[100vh] overflow-y-scroll ">
+
+        <section id="first" class="w-[100%] h-[100vh] bg-[url('../img/1.jpg')] bg-no-repeat bg-cover ">
+            <header id="header" class="w-full h-[100px] flex justify-end items-center px-10">
+                <ul id="menu" class="w-[50%] h-full flex justify-end items-center">
+                    <li class="h-full w-[20%]  list-none"><a class="flex w-full h-full justify-center items-center text-white text-[25px]" href="">home</a></li>
+                    <li class="h-full w-[20%]  list-none"><a class="flex w-full h-full justify-center items-center text-white text-[25px] " href="">about</a></li>
+                    <li class="h-full w-[20%]  list-none"><a class="flex w-full h-full justify-center items-center text-white text-[25px]" href="">service</a></li>
+                    <li class="h-full w-[20%]  list-none"><a class="flex w-full h-full justify-center items-center text-white text-[25px]" href="">tour</a></li>
+                </ul>
+            </header>
+            <div class="flex flex-wrap justify-center content-center my-40 ">
+                <h1 class="text-[70px] text-white text-center w-full">SCROLL PROJECT</h1>
+                <div class="w-full flex justify-center">
+                    <p class="text-[20px] text-white text-center my-6 w-[60%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut vel odit possimus earum blanditiis, atque repellendus deserunt modi, eligendi maxime qui reiciendis nostrum magnam in quasi magni ipsum vero. Dolores?</p>
+                </div>
+                
+                <button class="border text-white text-[20px] w-[200px] h-[60px]">EXPLORE TOURS</button>
+            </div>
+            
+        </section>
+
+        <section id="second" class=" w-full h-[100vh] bg-slate-300 text-teal-400 font-bold flex  justify-center items-center text-[80px] z-10">ABOUT</section> 
+        <section id="third" class=" w-full h-[100vh] bg-slate-50 text-teal-400 font-bold text-[80px] flex justify-center items-center ">SERVICE</section>
+        <section id="FOUTH" class=" w-full h-[100vh] bg-slate-300 text-teal-400 font-bold text-[80px] flex justify-center items-center ">TOUR</section>
+    </main>
+
+    <script>
+        let mn = document.getElementById('mn')
+        let _header = document.getElementById('header')
+        let _a = document.querySelectorAll('#header>ul>li>a')
+        let thirdbox = document.getElementById('third')
+        
+        mn.addEventListener('scroll',()=>{
+            let sc = mn.scrollTop
+            let scrollheight =mn.scrollHeight
+            if(sc>100){
+                _header.classList.add("headermod2")
+                _a.forEach((val)=>{
+                    val.style.animationName = 'anime1'
+                })
+            }
+            else{
+                _a.forEach((val)=>{
+                    val.style.animationName = 'anime2'
+                })
+                _header.classList.remove("headermod2")
+        
+            }
+            console.log(sc);
+            console.log(scrollheight);
+            if(sc> (scrollheight-716)){
+                console.log('raft');
+                thirdbox.style.bottom = 0
+            }
+        })
+    </script>
+    
+</body>
+</html>
