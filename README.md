@@ -1,5 +1,5 @@
 # trick22-scroll
-- [Demo Project](https://katayoon-faraji-web.github.io/tric21-scroll/)
+- [Demo Project](https://katayoon-faraji-web.github.io/trick22-scroll/)
 
 - Developed by katayoon faraji
 
